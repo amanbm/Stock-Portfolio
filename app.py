@@ -123,9 +123,9 @@ def printRecommendations(weeks_preceding):
 print("How many weeks prior would you like data for? ")
 inp = input()
 printRecommendations(int(inp))
-print("quit(q) or continue(c)")
 
 while(1):
+	print("quit(q) or continue(c)")
 	inp = input()
 	if(inp == "q"):
 		exit()
@@ -135,6 +135,4 @@ while(1):
 		printRecommendations(int(inp))
 	else:
 		print("incorrect input")
-
-	print("quit(q) or continue(c)")
 

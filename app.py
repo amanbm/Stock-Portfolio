@@ -4,6 +4,7 @@ import pandas as pd
 import pandas_datareader.data as web
 import os.path
 
+
 stabilityDict = {
 	6: "rock solid",
 	10: "stable",
@@ -53,7 +54,6 @@ def printSummary(start, end):
 	for ticker in getUpdatedTickers():
 		print(ticker.upper())
 
-		#TODO Optimize (maybe cache this result somehow)
 		df = getUpdatedData(ticker, start, end, False)
 		high = df.loc[:]['High'].max()
 		low = df.loc[:]['Low'].min()
@@ -86,11 +86,7 @@ def printRecommendations(weeks_preceding):
 			startPrice = round(df.loc[str(start)]['Close'], 2)
 		except:
 			print("fix this bug, today does not have any data")
-			
-		##
-		# print("start: " + str(start) + " " + "end: " + str(end))
-		# print(str(startPrice) + " " + str(endPrice))
-		##
+
 
 		percentChange = round(((endPrice-startPrice)/startPrice)*100, 2)
 		rec = ""

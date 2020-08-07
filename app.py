@@ -24,7 +24,7 @@ def getStability(percentChange):
 	for percent in stabilityDict:
 		if(percentChange < percent):
 			return stabilityDict[percent]
-	return stabilityDict[45];
+	return stabilityDict[45]
 
 # check if csv file for a certain ticker symbol exists, if so, read from the file instead of making a new query
 def getUpdatedData(ticker, start, end, force):
@@ -40,9 +40,9 @@ def getUpdatedData(ticker, start, end, force):
 # Returns the most recent valid business day
 def getValidCurrDate():
 	if(date.today().weekday() > 4):
-		today = datetime.datetime(2019, 9, 9)
+		today = date.datetime(2019, 9, 9)
 		offset = max(1, (today.weekday() + 6) % 7 - 3)
-		timedelta = datetime.timedelta(offset)
+		timedelta = date.timedelta(offset)
 		most_recent = today - timedelta
 		return most_recent
 	else:
@@ -60,7 +60,7 @@ def printSummary(start, end):
 		delta = high - low
 		percentChange = (delta/((high+low)/2))*100
 		print(getStability(percentChange))
-		print("High: " + str(round(high, 2)) + "\nLow: " + str(round(low, 2)) + "\nDelta: " + str(round(delta, 2)));
+		print("High: " + str(round(high, 2)) + "\nLow: " + str(round(low, 2)) + "\nDelta: " + str(round(delta, 2)))
 		print("Percent Change: " + str(int((percentChange).round())) + "%")
 		print('\n')
 
@@ -137,10 +137,4 @@ while(1):
 		print("incorrect input")
 
 	print("quit(q) or continue(c)")
-
-
-
-
-
-
 

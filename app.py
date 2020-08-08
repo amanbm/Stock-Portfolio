@@ -41,9 +41,9 @@ def getUpdatedData(ticker, start, end, force):
 # Returns the most recent valid business day
 def getValidCurrDate():
 	if(date.today().weekday() > 4):
-		today = date.datetime(2019, 9, 9)
+		today = dt.datetime(2019, 9, 9)
 		offset = max(1, (today.weekday() + 6) % 7 - 3)
-		timedelta = date.timedelta(offset)
+		timedelta = dt.timedelta(offset)
 		most_recent = today - timedelta
 		return most_recent
 	else:

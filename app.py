@@ -50,6 +50,7 @@ def getValidCurrDate():
 		return date.today()
 
 
+# Prints summary of portfolio from .txt file
 def printSummary(start, end):
 	for ticker in getUpdatedTickers():
 		print(ticker.upper())
